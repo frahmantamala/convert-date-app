@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent {
 
-  model ={
-    name: ''
+  constructor(private router: Router) { }
+
+  model = {
+    name: '',
+    date: ''
   };
-  
+
   showFormControls(form: any) {
     return form && form.controls['name'] &&
-      form.controls['name'].value; // Dr. IQ
+      form.controls['name'].value;
+  }
+
+  onSubmit() {
+    this.router.navigate([`/result/${this.model.date}`]);
   }
 }

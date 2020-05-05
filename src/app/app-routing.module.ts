@@ -6,14 +6,14 @@ import { HomeComponent } from './component/home/home.component';
 import { ResultComponent } from './component/result/result.component';
 
 const routes: Routes = [{
-    path: '',
-    component: HomeComponent,
-    pathMatch: 'full'
-  }, {
-    path: 'result/:date',
-    component: ResultComponent  
-  }, {
-    path: '**', redirectTo: ''  
+  path: '',
+  component: HomeComponent,
+  pathMatch: 'full'
+}, {
+  path: 'result/:date',
+  component: ResultComponent
+}, {
+  path: '**', redirectTo: ''
 }];
 
 @NgModule({
